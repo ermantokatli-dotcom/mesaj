@@ -53,7 +53,7 @@
 
     <!-- Oyun -->
     <h2 class="text-xl font-bold mt-10 mb-4 reveal delay-5 text-gray-900">
-      Tavuklu pilav oyunu 🍗🍚
+      Tavuklu pilav oyunu (Oynamak için bilgisayarda aç) 🍗🍚
     </h2>
     <div id="game" class="reveal delay-6" 
          style="position: relative; width: 100%; max-width: 600px; height: 200px; background: #fff; margin: 0 auto; overflow: hidden; border: 2px solid #ccc; border-radius: 8px;">
@@ -114,20 +114,11 @@
       }, 20);
     }
 
-// PC için space tuşu
-document.addEventListener("keydown", event => {
-  if (event.code === "Space") {
-    jump();
-  }
-});
-
-// Mobil için dokunma veya tıklama
-document.addEventListener("touchstart", () => {
-  jump();
-});
-document.addEventListener("click", () => {
-  jump();
-});
+    document.addEventListener("keydown", event => {
+      if (event.code === "Space") {
+        jump();
+      }
+    });
 
     restartBtn.addEventListener("click", () => {
       gameOver = false;
