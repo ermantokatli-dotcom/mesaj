@@ -18,7 +18,6 @@
     .delay-3 { animation-delay: 3s; }
     .delay-4 { animation-delay: 4s; }
     .delay-5 { animation-delay: 5s; }
-    .delay-6 { animation-delay: 6s; }
   </style>
 </head>
 <body class="bg-white text-black flex flex-col items-center justify-center min-h-screen px-4">
@@ -53,9 +52,9 @@
 
     <!-- Oyun -->
     <h2 class="text-xl font-bold mt-10 mb-4 reveal delay-5 text-gray-900">
-      Tavuklu pilav oyunu oynarsın (Oynamak için bilgisayarda aç) 🍗🍚
+      Tavuklu pilav oyunu oynarsın (PC DE AÇ OYNAMAK İÇİN) 🍗🍚
     </h2>
-    <div id="game" class="reveal delay-6" 
+    <div id="game" class="reveal delay-5" 
          style="position: relative; width: 100%; max-width: 600px; height: 200px; background: #fff; margin: 0 auto; overflow: hidden; border: 2px solid #ccc; border-radius: 8px;">
       <img id="tavuk" src="./tavuk.png" 
            style="position: absolute; bottom: 0; left: 50px; width: 50px; height: 50px;">
@@ -124,13 +123,10 @@
       gameOver = false;
       restartBtn.classList.add("hidden");
       pilav.style.left = "600px";
-      setTimeout(movePilav, 1500); // restart sonrası da gecikmeli başlasın
+      movePilav();
     });
 
-    // Sayfa açılınca pilav 4 saniye sonra hareket etmeye başlasın
-    setTimeout(() => {
-      movePilav();
-    }, 4000);
+    movePilav();
   </script>
 </body>
 </html>

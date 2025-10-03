@@ -5,61 +5,55 @@
   <title>Mesaj</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @keyframes fadeSlide {
-      from { opacity: 0; transform: translateY(-30px); }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .reveal {
-      opacity: 0;
-      animation: fadeSlide 1.5s ease forwards;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
+    .fade-in { animation: fadeInUp 1.8s ease forwards; }
+    .fade { animation: fadeIn 2.5s ease forwards; }
     .delay-1 { animation-delay: 1s; }
-    .delay-2 { animation-delay: 2s; }
-    .delay-3 { animation-delay: 3s; }
-    .delay-4 { animation-delay: 4s; }
-    .delay-5 { animation-delay: 5s; }
-    .delay-6 { animation-delay: 6s; }
+    .delay-2 { animation-delay: 2.5s; }
+    .delay-3 { animation-delay: 4s; }
   </style>
 </head>
 <body class="bg-white text-black flex flex-col items-center justify-center min-h-screen px-4">
   <div class="max-w-3xl text-center">
-
-    <!-- Metinler -->
-    <h1 class="text-2xl md:text-3xl font-bold reveal">
+    <!-- Metin -->
+    <h1 class="text-2xl md:text-3xl font-bold fade-in">
       Sözlerin değerini kaybettin,
     </h1>
-    <h1 class="text-2xl md:text-3xl font-bold reveal delay-1 mt-4">
+    <h1 class="text-2xl md:text-3xl font-bold fade-in delay-1 mt-4">
       çünkü herkese aynılarını söylüyorsun.
     </h1>
-    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 reveal delay-2 mt-4">
+    <h1 class="text-2xl md:text-3xl font-bold fade-in delay-2 mt-4">
       Benim için değer, tekrarda değil; samimiyette.
     </h1>
-    <p class="text-md text-gray-500 reveal delay-3">— Ulu kişi</p>
+    <p class="text-md text-gray-500">— Ulu kişi</p>
 
-    <div class="border-t border-gray-300 mt-10 mb-6 w-1/2 mx-auto reveal delay-3"></div>
+    <div class="border-t border-gray-600 mt-10 mb-6 w-1/2 mx-auto"></div>
 
-    <!-- Alıntı -->
-    <p class="mt-4 text-lg italic text-gray-600 reveal delay-3">
+    <p class="mt-4 text-lg italic text-gray-400 fade-in delay-2">
       “Kendi yolunu bulamayan, herkesin yolunda kaybolur.”
     </p>
-    <p class="text-md text-gray-400 reveal delay-3">— Friedrich Nietzsche</p>
+    <p class="text-md text-gray-500">— Friedrich Nietzsche</p>
 
     <!-- Gif -->
-    <div class="mt-10 reveal delay-4">
+    <div class="mt-10 fade delay-3">
       <img src="https://media1.tenor.com/m/0aKZn1alLRQAAAAd/la-la-land-ending.gif" 
            alt="La La Land Ending" 
            class="mx-auto rounded-lg shadow-lg w-full max-w-md">
     </div>
 
     <!-- Oyun -->
-    <h2 class="text-xl font-bold mt-10 mb-4 reveal delay-5 text-gray-900">
-      Tavuklu pilav oyunu oynarsın (Oynamak için bilgisayarda aç) 🍗🍚
-    </h2>
-    <div id="game" class="reveal delay-6" 
-         style="position: relative; width: 100%; max-width: 600px; height: 200px; background: #fff; margin: 0 auto; overflow: hidden; border: 2px solid #ccc; border-radius: 8px;">
-      <img id="tavuk" src="./tavuk.png" 
+    <h2 class="text-xl font-bold mt-10 mb-4">Tavuklu pilav oyunu oynarsın (PC DE AÇ OYNAMAK İÇİN) 🍗🍚</h2>
+<div id="game" style="position: relative; width: 100%; max-width: 600px; height: 200px; background: #fff; margin: 0 auto; overflow: hidden; border-radius: 8px; border: 2px solid #ccc;">
+      <img id="tavuk" src="tavuk.png" 
            style="position: absolute; bottom: 0; left: 50px; width: 50px; height: 50px;">
-      <img id="pilav" src="./pilav.png" 
+      <img id="pilav" src="pilav.png" 
            style="position: absolute; bottom: 0; right: -60px; width: 50px; height: 50px;">
     </div>
     <button id="restartBtn" class="hidden mt-4 px-4 py-2 bg-red-600 text-white rounded">Tekrar Başlat</button>
@@ -101,7 +95,7 @@
         if (pilavPosition < -60) {
           pilavPosition = 600;
         }
-        pilavPosition -= 3;
+        pilavPosition -= 3; // pilav daha yavaş geliyor
         pilav.style.left = pilavPosition + "px";
 
         let tavukBottom = parseInt(window.getComputedStyle(tavuk).getPropertyValue("bottom"));
@@ -124,13 +118,10 @@
       gameOver = false;
       restartBtn.classList.add("hidden");
       pilav.style.left = "600px";
-      setTimeout(movePilav, 1500); // restart sonrası da gecikmeli başlasın
+      movePilav();
     });
 
-    // Sayfa açılınca pilav 4 saniye sonra hareket etmeye başlasın
-    setTimeout(() => {
-      movePilav();
-    }, 4000);
+    movePilav();
   </script>
 </body>
 </html>
