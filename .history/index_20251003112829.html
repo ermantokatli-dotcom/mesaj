@@ -9,19 +9,13 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
     .fade-in { animation: fadeInUp 1.8s ease forwards; }
-    .fade { animation: fadeIn 2.5s ease forwards; }
     .delay-1 { animation-delay: 1s; }
     .delay-2 { animation-delay: 2.5s; }
-    .delay-3 { animation-delay: 4s; }
   </style>
 </head>
-<body class="bg-gray-900 text-gray-100 flex flex-col items-center justify-center min-h-screen">
-  <div class="max-w-3xl text-center px-6 flex-grow">
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen">
+  <div class="max-w-3xl text-center px-6">
     <!-- Senin sözün -->
     <h1 class="text-2xl md:text-3xl font-bold fade-in">
       Sözlerin değerini kaybettin,
@@ -32,7 +26,6 @@
     <h1 class="text-2xl md:text-3xl font-bold fade-in delay-2 mt-4">
       Benim için değer, tekrarda değil; samimiyette.
     </h1>
-    <p class="text-md text-gray-500">— Ulu kişi</p>
 
     <!-- Çizgi ile ayrım -->
     <div class="border-t border-gray-600 mt-10 mb-6 w-1/2 mx-auto"></div>
@@ -42,13 +35,6 @@
       “Kendi yolunu bulamayan, herkesin yolunda kaybolur.”
     </p>
     <p class="text-md text-gray-500">— Friedrich Nietzsche</p>
-  </div>
-
-  <!-- La La Land Gif -->
-  <div class="mt-6 mb-4 fade delay-3">
-    <img src="https://media1.tenor.com/m/0aKZn1alLRQAAAAd/la-la-land-ending.gif" 
-         alt="La La Land Ending" 
-         class="w-72 mx-auto rounded-lg shadow-lg">
   </div>
 </body>
 </html>

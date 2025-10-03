@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Mesaj</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 2s ease forwards;
+    }
+    .delay-1 { animation-delay: 1s; }
+    .delay-2 { animation-delay: 2.5s; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 flex items-center justify-center min-h-screen">
+  <div class="max-w-3xl text-center px-6">
+    <h1 class="text-2xl md:text-3xl font-bold fade-in">
+      Herkesle görüşmek, herkesle konuşmak kolaydır.
+    </h1>
+    <h1 class="text-2xl md:text-3xl font-bold fade-in delay-1 mt-4">
+      Ama duyguların anlamı vardır, değeri vardır.
+    </h1>
+    <h1 class="text-2xl md:text-3xl font-bold fade-in delay-2 mt-4">
+      Yüzeysel oyunlarla vakit harcayan birinin hayatımda yeri olmadı, olmayacak.
+    </h1>
+
+    <p class="mt-8 text-lg italic text-slate-400 fade-in delay-2">
+      — Marcus Aurelius
+    </p>
+  </div>
+</body>
+</html>
